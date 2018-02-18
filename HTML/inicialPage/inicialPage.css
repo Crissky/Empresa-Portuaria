@@ -1,0 +1,43 @@
+h1{
+  font-family: sans-serif;
+  color: blue;
+}
+
+
+.btNavio{
+
+  background-image: url("ship-front-view.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  text-align: center;
+
+}
+
+.btCarga{
+  background-image: url("box.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
+
+.btAgente{
+  background-image: url("traffic-police.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
+
+.btRota{
+  background-image: url("pointer.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
+
+.btPorto{
+  background-image: url("city-dock.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
