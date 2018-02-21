@@ -16,7 +16,7 @@ and open the template in the editor.
         </div>
         <div class="baixo">
             <a href="rotaPage.php"> <div class="btRota"> </div> </a>
-            <a href="../cargaPage/cargaPage.html"> <div class="btCarga"> </div> </a>
+            <a href="cargaPage.php"> <div class="btCarga"> </div> </a>
         </div>
         <?php include (FOOTER_TEMPLATE);?>
     </body>

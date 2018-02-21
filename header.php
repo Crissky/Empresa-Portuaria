@@ -18,6 +18,7 @@
                 <a href="portoPage.php"><li>Portos</li></a>
                 <a href="agentePage.php"><li>Agentes</li></a>
                 <a href="rotaPage.php"><li>Rotas</li></a>
+                <a href="cargaPage.php"><li>Cargas</li></a>
             </ul>
         </nav>
         <section>

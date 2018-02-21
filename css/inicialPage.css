@@ -157,7 +157,7 @@ footer#rodape p {
 table {
     top:50px;
     position: relative;
-    border: 1px solid #606060;
+    border: 0px solid #606060;
     border-spacing: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -165,8 +165,8 @@ table {
 
 table th{
     color: #FFF;
-    border: 1px solid #303030;
-    background-color: #016CF0;
+    border: 1px solid #FFF;
+    background-color: #2196F3;
     font-weight: bold;
     text-align: center;
     padding: 10px;
@@ -174,10 +174,20 @@ table th{
 }
 
 table td {
-    border: 1px solid #606060;
-    background-color: #87CEFA;
+    border: 1px solid #303030;
+    background-color: #BBDEFB;
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+}
+table td#light {
+    background-color: #E3F2FD;
+    border: 1px solid #FFF;
+}
+
+table td#dark {
+    background-color: #BBDEFB;
+    border: 1px solid #FFF;
 }
 
 p#addlink{

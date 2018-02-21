@@ -27,7 +27,7 @@
             <tr>
                 <td>Navio:</td>
                 <td>
-                    <select name="nome_navio">
+                    <select name="nome_navio" style="width: 100%">
                         <?php
                             if($grupo_navio){
                                 foreach ($grupo_navio as $navio){ ?>
@@ -41,7 +41,7 @@
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto">
+                    <select name="nome_porto" style="width: 100%">
                         <?php
                             if($grupo_porto){
                                 foreach ($grupo_porto as $porto){ ?>

@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php include 'connection.php';
+    $nRow = 0;
     try {
        $grupo = selectAllNavios(); 
    } catch (Exception $ex) {
@@ -25,8 +26,8 @@ and open the template in the editor.
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Capacidade</th>
-                <th>Comprimento</th>
+                <th>Capacidade (Ton)</th>
+                <th>Comprimento (m)</th>
                 <th>Calado</th>
                 <th>Editar</th>
                 <th>Excluir</th>
@@ -35,19 +36,29 @@ and open the template in the editor.
         <tbody>
             <?php
                 if($grupo){
-                    foreach ($grupo as $navio){ ?>
+                    foreach ($grupo as $navio){ 
+                        $nRow += 1;?>
                         <tr>
-                            <td><?=$navio["nome"]?></td>
-                            <td><?=$navio["capacidade"]?></td>
-                            <td><?=$navio["comprimento"]?></td>
-                            <td><?=$navio["calado"]?></td>
-                            <td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$navio["nome"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$navio["capacidade"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$navio["comprimento"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$navio["calado"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="alterar" action="updateNavio.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>'/>
                                     <input type="submit" value="Editar" name="editar" />
                                 </form>
                             </td>
-                            <td><form name="excluir" action="connection.php" method="POST">
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                <form name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>' />
                                     <input type="hidden" name="action" value="excluirNavio" />
                                     <input type="submit" value="Excluir" name="excluir" />

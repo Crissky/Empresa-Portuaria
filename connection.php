@@ -283,6 +283,12 @@ function selectRotaByNomes($nome_navio, $nome_porto){
     return selectOneLine($sql);
 }
 
+function selectAllCargas(){
+    $sql = "SELECT * FROM carga ORDER BY numero";
+    
+    return selectAll($sql);
+}
+
 function voltarIndex(){
     header("Location:index.php");
 }

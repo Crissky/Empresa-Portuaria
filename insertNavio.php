@@ -16,19 +16,19 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" value="" /></td>
+                <td><input type="text" name="nome" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td>Capacidade:</td>
-                <td><input type="text" name="capacidade" value="" /></td>
+                <td><input type="text" name="capacidade" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td>Comprimento:</td>
-                <td><input type="text" name="comprimento" value="" /></td>
+                <td><input type="text" name="comprimento" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td>Calado:</td>
-                <td><input type="text" name="calado" value="" /></td>
+                <td><input type="text" name="calado" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="inserirNavio" /></td>

@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php include 'connection.php';
+    $nRow = 0;
     try {
        $grupo = selectAllRotas(); 
    } catch (Exception $ex) {
@@ -31,18 +32,24 @@ and open the template in the editor.
         <tbody>
             <?php
                 if($grupo){
-                    foreach ($grupo as $rota){ ?>
+                    foreach ($grupo as $rota){ 
+                        $nRow += 1;?>
                         <tr>
-                            <td><?=$rota["nome_navio"]?></td>
-                            <td><?=$rota["nome_porto"]?></td>
-                            <td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$rota["nome_navio"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$rota["nome_porto"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="alterar" action="updateRota.php" method="POST">
                                     <input type="hidden" name="nome_navio" value='<?=$rota["nome_navio"]?>'/>
                                     <input type="hidden" name="nome_porto" value='<?=$rota["nome_porto"]?>'/>
                                     <input type="submit" value="Editar" name="editar" />
                                 </form>
                             </td>
-                            <td><form name="excluir" action="connection.php" method="POST">
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                <form name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome_navio" value='<?=$rota["nome_navio"]?>'/>
                                     <input type="hidden" name="nome_porto" value='<?=$rota["nome_porto"]?>'/>
                                     <input type="hidden" name="action" value="excluirRota" />

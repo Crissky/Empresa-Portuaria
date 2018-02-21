@@ -16,16 +16,16 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" value="" /></td>
+                <td><input type="text" name="nome" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td>Endereço:</td>
-                <td><input type="text" name="endereco" value="" /></td>
+                <td><input type="text" name="endereco" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td>Tipo:</td>
                 <td>
-                    <select name="tipo">
+                    <select name="tipo" style="width: 100%">
                         <option value="fluvial">Fluvial</option>
                         <option value="maritimo">Marítimo</option>
                     </select>
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>Capacidade Estocagem:</td>
-                <td><input type="text" name="capacidade_estocagem" value="" /></td>
+                <td><input type="text" name="capacidade_estocagem" style="width: 100%" value="" /></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="inserirPorto" /></td>

@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php include 'connection.php';
+    $nRow = 0;
     try {
        $grupo = selectAllAgentes(); 
    } catch (Exception $ex) {
@@ -34,18 +35,25 @@ and open the template in the editor.
         <tbody>
             <?php
                 if($grupo){
-                    foreach ($grupo as $agente){ ?>
+                    foreach ($grupo as $agente){ 
+                        $nRow += 1;?>
                         <tr>
-                            <td><?=$agente["codigo"]?></td>
-                            <td><?=$agente["nome"]?></td>
-                            <td><?=$agente["nome_porto"]?></td>
-                            <td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$agente["codigo"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$agente["nome"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
+                                    <?=$agente["nome_porto"]?>
+                            </td>
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="alterar" action="updateAgente.php" method="POST">
                                     <input type="hidden" name="codigo" value='<?=$agente["codigo"]?>'/>
                                     <input type="submit" value="Editar" name="editar" />
                                 </form>
                             </td>
-                            <td><form name="excluir" action="connection.php" method="POST">
+                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> ><form name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="codigo" value='<?=$agente["codigo"]?>' />
                                     <input type="hidden" name="action" value="excluirAgente" />
                                     <input type="submit" value="Excluir" name="excluir" />

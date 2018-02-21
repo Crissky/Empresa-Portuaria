@@ -26,12 +26,12 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" value='<?=$agente["nome"]?>' /></td>
+                <td><input type="text" name="nome" style="width: 100%" value='<?=$agente["nome"]?>' /></td>
             </tr>
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto">
+                    <select name="nome_porto" style="width: 100%">
                         <?php
                             if($grupo){
                                 foreach ($grupo as $porto){ ?>

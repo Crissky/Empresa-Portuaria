@@ -21,19 +21,19 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" value='<?=$navio["nome"]?>' /></td>
+                <td><input type="text" name="nome" style="width: 100%" value='<?=$navio["nome"]?>' /></td>
             </tr>
             <tr>
                 <td>Capacidade:</td>
-                <td><input type="text" name="capacidade" value='<?=$navio["capacidade"]?>' /></td>
+                <td><input type="text" name="capacidade" style="width: 100%" value='<?=$navio["capacidade"]?>' /></td>
             </tr>
             <tr>
                 <td>Comprimento:</td>
-                <td><input type="text" name="comprimento" value='<?=$navio["comprimento"]?>' /></td>
+                <td><input type="text" name="comprimento" style="width: 100%" value='<?=$navio["comprimento"]?>' /></td>
             </tr>
             <tr>
                 <td>Calado:</td>
-                <td><input type="text" name="calado" value='<?=$navio["calado"]?>' /></td>
+                <td><input type="text" name="calado" style="width: 100%" value='<?=$navio["calado"]?>' /></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="alterarNavio" />
