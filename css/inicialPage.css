@@ -1,0 +1,170 @@
+h1{
+  font-family: sans-serif;
+  text-align: center;
+  color: #016CF0;
+  top:50px;
+  position: relative;
+}
+
+h2{
+  font-family: sans-serif;
+  text-align: center;
+  color: #016CF0;
+  top:50px;
+  position: relative;
+}
+
+.btNavio{
+
+  background-image: url("ship-front-view.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  position: relative;
+  top:160px;
+  left: 420px;
+
+}
+
+.btCarga{
+  background-image: url("box.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  bottom:180px;
+  left: 500px;
+
+}
+
+.btAgente{
+  background-image: url("traffic-police.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  top:28px;
+  left: 570px;
+
+}
+
+.btRota{
+  background-image: url("pointer.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  bottom:60px;
+  left: 670px;
+}
+
+.btPorto{
+  background-image: url("city-dock.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  bottom:95px;
+  left: 720px;
+}
+
+/*Formatação do Menu*/
+nav#menu{
+    display: block; /*Um block pode flutuar pela tela*/
+}
+
+nav#menu ul {
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: -18px;
+    margin-left: 250px;
+    min-width: 605px; /*Tamanho minimo para não quebrar o menu*/
+}
+
+nav#menu li {
+    display: inline-block;
+    margin: 2px;    /*Acrecenta espaço fora do container*/
+    padding: 10px;  /*Acrecenta espaço dentro do container*/
+    background-color: #016CF0;
+    transition: background-color 1s; /*Elemento e duração da transição feito no HOVER*/
+}
+
+nav#menu li:hover {
+    background-color: #000080;
+    text-decoration: underline;
+}
+
+nav#menu h1 {
+    display: none;
+}
+
+nav#menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav#menu a:hover {
+    color: #BBB;
+}
+
+a {
+    font-weight: bolder;
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer#rodape {
+    clear: both;    /*Limpa a display do que está acima para não ser afetado pelo float*/
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p {
+    text-align: center;
+}
+
+table {
+    top:50px;
+    position: relative;
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th{
+    color: #FFF;
+    border: 1px solid #303030;
+    background-color: #606060;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+}
+
+table td {
+    border: 1px solid #606060;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+
+table td{
+    background-color: #cecece;
+}
+
+a#link{
+  font-family: sans-serif;
+  color: #016CF0;
+  top:50px;
+  position: relative;
+  display:   block;
+  text-align: center;
+}
