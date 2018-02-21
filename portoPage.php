@@ -44,7 +44,13 @@ and open the template in the editor.
                                     <?=$porto["endereco"]?>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$porto["tipo"]?>
+                                    <?php
+                                        if($porto["tipo"] == "fluvial"){
+                                            echo 'Fluvial';
+                                        } else {
+                                            echo 'Marítimo';
+                                        }
+                                    ?>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                     <?=$porto["capacidade_estocagem"]?>

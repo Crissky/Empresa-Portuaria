@@ -289,6 +289,12 @@ function selectAllCargas(){
     return selectAll($sql);
 }
 
+function selectAllTiposCargas(){
+    $sql = "SELECT DISTINCT tipo FROM carga ORDER BY tipo";
+    
+    return selectAll($sql);
+}
+
 function voltarIndex(){
     header("Location:index.php");
 }

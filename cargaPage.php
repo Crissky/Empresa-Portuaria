@@ -62,7 +62,13 @@ and open the template in the editor.
                                     <?=$carga["codigo"]?>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["tipo"]?>
+                                    <?php
+                                        if($carga["tipo"] == "perecivel"){
+                                            echo 'Perecível';
+                                        } else{
+                                            echo 'Sensível';
+                                        }
+                                    ?>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <?php 
