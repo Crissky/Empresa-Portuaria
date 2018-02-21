@@ -41,5 +41,5 @@
             </tr>
         </tbody>
     </table>
-
 </form>
+<?php include (FOOTER_TEMPLATE);?>        

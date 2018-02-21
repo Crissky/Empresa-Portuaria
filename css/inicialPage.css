@@ -1,9 +1,99 @@
+.btNavio{
+  background-image: url("ship-front-view.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  display: inline-block;
+  /*position: relative;
+  top:160px;
+  left: 420px;*/
+  transition: 0.5s;
+}
+
+.btCarga{
+  background-image: url("box.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  /*position: relative;
+  bottom:180px;
+  left: 500px;*/
+  transition: 0.5s;
+}
+
+.btAgente{
+  background-image: url("traffic-police.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  /*position: relative;
+  top:28px;
+  left: 570px;*/
+  transition: 0.5s;
+}
+
+.btRota{
+  background-image: url("pointer.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  /*position: relative;
+  bottom:60px;
+  left: 670px;*/
+  transition: 0.5s;
+}
+
+.btPorto{
+  background-image: url("city-dock.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  /*position: relative;
+  bottom:95px;
+  left: 720px;*/
+  transition: 0.5s;
+}
+
+.btNavio:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.btCarga:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.btAgente:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.btRota:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.btPorto:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
 h1{
   font-family: sans-serif;
   text-align: center;
-  color: #016CF0;
+  color: #0D47A1;
   top:50px;
   position: relative;
+}
+
+h1#mainscreen {
+    top:75px;
 }
 
 h2{
@@ -12,61 +102,6 @@ h2{
   color: #016CF0;
   top:50px;
   position: relative;
-}
-
-.btNavio{
-
-  background-image: url("ship-front-view.png");
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 128px;
-  text-align: center;
-  position: relative;
-  top:160px;
-  left: 420px;
-
-}
-
-.btCarga{
-  background-image: url("box.png");
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 128px;
-  position: relative;
-  bottom:180px;
-  left: 500px;
-
-}
-
-.btAgente{
-  background-image: url("traffic-police.png");
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 128px;
-  position: relative;
-  top:28px;
-  left: 570px;
-
-}
-
-.btRota{
-  background-image: url("pointer.png");
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 128px;
-  position: relative;
-  bottom:60px;
-  left: 670px;
-}
-
-.btPorto{
-  background-image: url("city-dock.png");
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 128px;
-  position: relative;
-  bottom:95px;
-  left: 720px;
 }
 
 /*Formatação do Menu*/
@@ -79,7 +114,6 @@ nav#menu ul {
     text-transform: uppercase;
     position: absolute;
     top: -18px;
-    margin-left: 250px;
     min-width: 605px; /*Tamanho minimo para não quebrar o menu*/
 }
 
@@ -92,7 +126,7 @@ nav#menu li {
 }
 
 nav#menu li:hover {
-    background-color: #000080;
+    background-color: #0D47A1;
     text-decoration: underline;
 }
 
@@ -110,19 +144,10 @@ nav#menu a:hover {
     color: #BBB;
 }
 
-a {
-    font-weight: bolder;
-    color: #606060;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 footer#rodape {
     clear: both;    /*Limpa a display do que está acima para não ser afetado pelo float*/
     border-top: 1px solid #606060;
+    margin-top: 100px;
 }
 
 footer#rodape p {
@@ -141,7 +166,7 @@ table {
 table th{
     color: #FFF;
     border: 1px solid #303030;
-    background-color: #606060;
+    background-color: #016CF0;
     font-weight: bold;
     text-align: center;
     padding: 10px;
@@ -150,21 +175,57 @@ table th{
 
 table td {
     border: 1px solid #606060;
+    background-color: #87CEFA;
     padding-left: 10px;
     padding-right: 10px;
-    
 }
 
+p#addlink{
+    display:   block;
+    top:50px;
+    position: relative;
+    text-align: center;
+}
 
-table td{
-    background-color: #cecece;
+a {
+    font-weight: bolder;
+    color: #1E90FF;
+    text-decoration: none;
+}
+
+a#footlink:hover {
+    text-decoration: underline;
 }
 
 a#link{
   font-family: sans-serif;
-  color: #016CF0;
-  top:50px;
-  position: relative;
-  display:   block;
-  text-align: center;
+  color: #1E90FF;
+}
+
+a#link:hover{
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DDD;
+    color: rgba(0,0,0,1);
+}
+
+div#interface {
+    width: 1000px;
+    background-color: #FFF;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    padding: 10px;
+}
+
+div.cima {
+    text-align: center;
+    padding-top: 100px;
+}
+
+div.baixo {
+    text-align: center;
+    vertical-align: text-bottom;
 }

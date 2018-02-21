@@ -8,6 +8,8 @@
     </head>
 
     <body>
+        <div id="interface">
+        
         <nav id="menu">
             <h1>Menu Principal</h1>
             <ul type="square">
@@ -18,3 +20,4 @@
                 <a href="rotaPage.php"><li>Rotas</li></a>
             </ul>
         </nav>
+        <section>

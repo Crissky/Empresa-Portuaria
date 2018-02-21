@@ -7,7 +7,7 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-        <h1>Empresa Portuaria</h1>
+        <h1 id="mainscreen">Empresa Portuaria</h1>
 
         <div class="cima">
             <a href="navioPage.php"> <div class="btNavio"> </div> </a>
