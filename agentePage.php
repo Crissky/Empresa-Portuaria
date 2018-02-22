@@ -28,7 +28,7 @@ and open the template in the editor.
                 <?php
                 if($grupo){
                     foreach ($grupo as $agente){ ?>
-                <div class="col-sm-4 mt-4">
+                <div class="col-sm-11 col-md-6 col-lg-4 mt-4">
                     <div class="card">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
