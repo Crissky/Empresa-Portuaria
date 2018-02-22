@@ -15,8 +15,8 @@
             <ul type="square">
                 <a href="index.php"><li>Home</li></a>
                 <a href="navioPage.php"><li>Navios</li></a>
-                <a href="portoPage.php"><li>Portos</li></a>
                 <a href="agentePage.php"><li>Agentes</li></a>
+                <a href="portoPage.php"><li>Portos</li></a>
                 <a href="rotaPage.php"><li>Rotas</li></a>
                 <a href="cargaPage.php"><li>Cargas</li></a>
             </ul>

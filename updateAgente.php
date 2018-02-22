@@ -35,7 +35,7 @@
                         <?php
                             if($grupo){
                                 foreach ($grupo as $porto){ ?>
-                                    <option value="<?=$porto["nome"]?>" <?php if ($agente["nome_porto"] == $porto["nome"]) echo "selected='selected'";?> ><?=$porto["nome"]?></option>
+                                    <option value="<?=$porto["nome"]?>" <?php if ($agente["nome_porto"] == $porto["nome"]){echo "selected='selected'";}?> ><?=$porto["nome"]?></option>
                             <?php }
                             }
                         ?>
