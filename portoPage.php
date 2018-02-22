@@ -16,62 +16,54 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-    <h1>Portos</h1> 
+    <h1 class="mb-4">Portos</h1> 
     <p id="addlink">
         <a class="btn btn-primary" href="insertPorto.php">Adicionar Porto</a>
     </p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Endereço</th>
-                <th>Tipo</th>
-                <th>Cap. Estocagem (Ton)</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+    <div class="container mt-5">
+            <div class="row mb-5">
+                
+                <?php
                 if($grupo){
-                    foreach ($grupo as $porto){ 
-                        $nRow += 1;?>
-                        <tr>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$porto["nome"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$porto["endereco"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?php
-                                        if($porto["tipo"] == "fluvial"){
-                                            echo 'Fluvial';
-                                        } else {
-                                            echo 'Marítimo';
-                                        }
-                                    ?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$porto["capacidade_estocagem"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <form name="alterar" action="updatePorto.php" method="POST">
+                    foreach ($grupo as $porto){?>
+                <div class="col-sm-4 mt-4">
+                    <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Nome:</div>                                         
+                                    <div class="d-inline"> <?=$porto["nome"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Endereço:</div>                                         
+                                    <div class="d-inline"> <?=$porto["endereco"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Tipo:</div>                                         
+                                    <div class="d-inline"> <?php if($porto["tipo"] == "fluvial"){echo 'Fluvial';} else {echo 'Marítimo';}?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Cap. Estocagem (Ton):</div>                                         
+                                    <div class="d-inline"> <?=$porto["capacidade_estocagem"]?> </div>
+                                </li>
+                            </ul>
+                        <div class="card-body ml-auto">
+                            <div class="row">
+                                <form class="mr-3" name="alterar" action="updatePorto.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$porto["nome"]?>'/>
-                                    <input class="btn btn-warning btn-sm" type="submit" value="Editar" name="editar" />
+                                    <input class="btn btn-warning" type="submit" value="Editar" name="editar" />
                                 </form>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <form name="excluir" action="connection.php" method="POST">
+                                <form class="mr-3" name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$porto["nome"]?>' />
                                     <input type="hidden" name="action" value="excluirPorto" />
-                                    <input class="btn btn-danger btn-sm" type="submit" value="Excluir" name="excluir" />
+                                    <input class="btn btn-danger" type="submit" value="Excluir" name="excluir" />
                                 </form>
-                            </td>
-                        </tr>
-                    <?php }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }
                 }
                 ?>
-        </tbody>
-    </table>
+            </div>
+        </div>
 <?php include (FOOTER_TEMPLATE);?>

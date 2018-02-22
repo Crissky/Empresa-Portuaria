@@ -24,101 +24,76 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-    <h1>Cargas</h1>
+    <h1 class="mb-4">Cargas</h1>
 
     <p id="addlink">
         <a class="btn btn-primary" href="insertCarga.php">Adicionar Carga</a>
     </p>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Peso (Ton)</th>
-                <th>Cód</th>
-                <th>Tipo</th>
-                <th>Validade</th>
-                <th>Temperatura</th>
-                <th>Navio</th>
-                <th>Porto</th>
-                <th>Desembarque</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+    <div class="container mt-5">
+            <div class="row mb-5">
+                
+                <?php
                 if($grupo){
-                    foreach ($grupo as $carga){ 
-                        $nRow += 1;?>
-                        <tr>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["numero"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["peso"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["codigo"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?php
-                                        if($carga["tipo"] == "perecivel"){
-                                            echo 'Perecível';
-                                        } else{
-                                            echo 'Sensível';
-                                        }
-                                    ?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <?php 
-                                    if($carga["data_validade"]){
-                                        echo formataData($carga["data_validade"]);
-                                    } else {
-                                        echo 'N/A';
-                                    }
-                                ?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <?php 
-                                    if($carga["temperatura_maxima"]){
-                                        echo $carga["temperatura_maxima"]."C";
-                                    } else {
-                                        echo 'N/A';
-                                    }
-                                ?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["nome_navio"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$carga["nome_porto"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <?php 
-                                    if($carga["data_maxima_desembarque"]){
-                                        echo formataData($carga["data_maxima_desembarque"]);
-                                    } else {
-                                        echo 'N/A';
-                                    }
-                                ?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <form name="alterar" action="updateCarga.php" method="POST">
+                    foreach ($grupo as $carga){ ?>
+                <div class="col-sm-4 mt-4">
+                    <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Número:</div>                                         
+                                    <div class="d-inline"> <?=$carga["numero"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Peso (Ton):</div>                                         
+                                    <div class="d-inline"> <?=$carga["peso"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Código:</div>                                         
+                                    <div class="d-inline"> <?=$carga["codigo"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Tipo:</div>                                         
+                                    <div class="d-inline"> <?php if($carga["tipo"] == "perecivel"){echo 'Perecível';} else {echo 'Sensível';}?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Validade:</div>                                         
+                                    <div class="d-inline"> <?php if($carga["data_validade"]){echo formataData($carga["data_validade"]);} else {echo 'N/A';}?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Temperatura:</div>                                         
+                                    <div class="d-inline"> <?php if($carga["temperatura_maxima"]){echo $carga["temperatura_maxima"]."C";} else {echo 'N/A';}?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Navio:</div>                                         
+                                    <div class="d-inline"> <?=$carga["nome_navio"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Porto:</div>                                         
+                                    <div class="d-inline"> <?=$carga["nome_porto"]?> </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-inline font-weight-bold">Desembarque:</div>                                         
+                                    <div class="d-inline"> <?php if($carga["data_maxima_desembarque"]){echo formataData($carga["data_maxima_desembarque"]);} else {echo 'N/A';}?> </div>
+                                </li>
+                            </ul>
+                        <div class="card-body ml-auto">
+                            <div class="row">
+                                <form class="mr-3 mt-1" name="alterar" action="updateCarga.php" method="POST">
                                     <input type="hidden" name="numero" value='<?=$carga["numero"]?>'/>
-                                    <input class="btn btn-warning btn-sm" type="submit" value="Editar" name="editar" />
+                                    <input class="btn btn-warning" type="submit" value="Editar" name="editar" />
                                 </form>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> ><form name="excluir" action="connection.php" method="POST">
+                                <form class="mr-3 mt-1" name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="numero" value='<?=$carga["numero"]?>' />
                                     <input type="hidden" name="action" value="excluirCarga" />
-                                    <input class="btn btn-danger btn-sm" type="submit" value="Excluir" name="excluir" />
+                                    <input class="btn btn-danger" type="submit" value="Excluir" name="excluir" />
                                 </form>
-                            </td>
-                        </tr>
-                    <?php }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }
                 }
                 ?>
-        </tbody>
-    </table>
+            </div>
+        </div>
 <?php include (FOOTER_TEMPLATE);?>
