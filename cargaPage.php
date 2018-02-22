@@ -34,7 +34,7 @@ and open the template in the editor.
         <thead>
             <tr>
                 <th>#</th>
-                <th>Peso</th>
+                <th>Peso (Ton)</th>
                 <th>Cód</th>
                 <th>Tipo</th>
                 <th>Validade</th>
@@ -110,7 +110,7 @@ and open the template in the editor.
                                 </form>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> ><form name="excluir" action="connection.php" method="POST">
-                                    <input type="hidden" name="nome" value='<?=$carga["numero"]?>' />
+                                    <input type="hidden" name="numero" value='<?=$carga["numero"]?>' />
                                     <input type="hidden" name="action" value="excluirCarga" />
                                     <input type="submit" value="Excluir" name="excluir" />
                                 </form>

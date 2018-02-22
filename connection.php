@@ -43,8 +43,15 @@ if(isset($_POST["action"])){
     if($_POST["action"]=="excluirRota"){
         deleteRota();
     }
-    
-    
+    if($_POST["action"]=="inserirCarga"){
+        insertCarga();
+    }
+    if($_POST["action"]=="alterarCarga"){
+        updateCarga();
+    }
+    if($_POST["action"]=="excluirCarga"){
+        deleteCarga();
+    }
 }
 
 function open_database(){
@@ -235,6 +242,69 @@ function deleteRota(){
     voltarRotaPage();
 }
 
+function insertCarga(){
+    $peso = filter_input(INPUT_POST, "peso");
+    $codigo = filter_input(INPUT_POST, "codigo");
+    $tipo = filter_input(INPUT_POST, "tipo");
+    $data_validade = filter_input(INPUT_POST, "data_validade");
+    $temperatura_maxima = filter_input(INPUT_POST, "temperatura_maxima");
+    $nome_navio = filter_input(INPUT_POST, "nome_navio");
+    $nome_porto = filter_input(INPUT_POST, "nome_porto");
+    $data_maxima_desembarque = filter_input(INPUT_POST, "data_maxima_desembarque");
+    
+    if($tipo == "perecivel"){
+        $sql = "INSERT INTO carga(peso, codigo, tipo, data_validade, nome_navio, nome_porto, data_maxima_desembarque) "
+            . "VALUES ('$peso','$codigo','$tipo','$data_validade','$nome_navio','$nome_porto','$data_maxima_desembarque')";
+    } else {
+        $sql = "INSERT INTO carga(peso, codigo, tipo, temperatura_maxima, nome_navio, nome_porto, data_maxima_desembarque) "
+            . "VALUES ('$peso','$codigo','$tipo','$temperatura_maxima','$nome_navio','$nome_porto','$data_maxima_desembarque')";
+    }
+    //$sql = "INSERT INTO carga(peso, codigo, tipo, data_validade, temperatura_maxima, nome_navio, nome_porto, data_maxima_desembarque) "
+    //. "VALUES ('$peso','$codigo','$tipo','$data_validade', '$temperatura_maxima', '$nome_navio', '$nome_porto', '$data_maxima_desembarque')";
+    
+    lauchQuery($sql);
+    voltarCargaPage();
+}
+
+function updateCarga(){
+    $numero = filter_input(INPUT_POST, "numero");
+    $peso = filter_input(INPUT_POST, "peso");
+    $codigo = filter_input(INPUT_POST, "codigo");
+    $tipo = filter_input(INPUT_POST, "tipo");
+    $data_validade = filter_input(INPUT_POST, "data_validade");
+    $temperatura_maxima = filter_input(INPUT_POST, "temperatura_maxima");
+    $nome_navio = filter_input(INPUT_POST, "nome_navio");
+    $nome_porto = filter_input(INPUT_POST, "nome_porto");
+    $data_maxima_desembarque = filter_input(INPUT_POST, "data_maxima_desembarque");
+    
+    if($tipo == "perecivel"){
+        $sql = "UPDATE IGNORE carga SET "
+            . "peso='$peso',codigo='$codigo',"
+            . "tipo='$tipo',data_validade='$data_validade',"
+            . "temperatura_maxima=NULL,nome_navio='$nome_navio',"
+            . "nome_porto='$nome_porto',data_maxima_desembarque='$data_maxima_desembarque' "
+            . "WHERE numero='$numero'";
+    } else {
+        $sql = "UPDATE IGNORE carga SET "
+            . "peso='$peso',codigo='$codigo',"
+            . "tipo='$tipo',data_validade=NULL,"
+            . "temperatura_maxima='$temperatura_maxima',nome_navio='$nome_navio',"
+            . "nome_porto='$nome_porto',data_maxima_desembarque='$data_maxima_desembarque' "
+            . "WHERE numero='$numero'";
+    }
+    
+    lauchQuery($sql);
+    voltarCargaPage();
+}
+
+function deleteCarga(){
+    $numero = filter_input(INPUT_POST, "numero");
+    $sql = "DELETE FROM carga WHERE numero='$numero'";
+    
+    lauchQuery($sql);
+    voltarCargaPage();
+}
+
 function selectAllNavios(){
     $sql = "SELECT * FROM navio ORDER BY nome";
     
@@ -289,6 +359,12 @@ function selectAllCargas(){
     return selectAll($sql);
 }
 
+function selectCargasByNumero($numero){
+    $sql = "SELECT * FROM carga WHERE numero='$numero'";
+    
+    return selectOneLine($sql);
+}
+
 function selectAllTiposCargas(){
     $sql = "SELECT DISTINCT tipo FROM carga ORDER BY tipo";
     
@@ -313,4 +389,8 @@ function voltarAgentePage(){
 
 function voltarRotaPage(){
     header("Location:rotaPage.php");
+}
+
+function voltarCargaPage(){
+    header("Location:cargaPage.php");
 }

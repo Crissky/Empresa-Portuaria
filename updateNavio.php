@@ -36,7 +36,8 @@
                 <td><input type="text" name="calado" style="width: 100%" value='<?=$navio["calado"]?>' /></td>
             </tr>
             <tr>
-                <td><input type="hidden" name="action" value="alterarNavio" />
+                <td>
+                    <input type="hidden" name="action" value="alterarNavio" />
                     <input type="hidden" name="originalNome" value='<?=$navio["nome"]?>' />
                 </td>
                 <td><input type="submit" value="Enviar" name="Enviar" /></td>

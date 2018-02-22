@@ -190,6 +190,10 @@ table td#dark {
     border: 1px solid #FFF;
 }
 
+table td#radio {
+    text-align: left;
+}
+
 p#addlink{
     display:   block;
     top:50px;
