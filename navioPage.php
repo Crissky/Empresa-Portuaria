@@ -19,7 +19,7 @@ and open the template in the editor.
     <h1>Navios</h1>
 
     <p id="addlink">
-        <a id="link" href="insertNavio.php">Adicionar Navio</a>
+        <a class="btn btn-primary" href="insertNavio.php">Adicionar Navio</a>
     </p>
 
     <table border="1">
@@ -54,14 +54,14 @@ and open the template in the editor.
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="alterar" action="updateNavio.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>'/>
-                                    <input type="submit" value="Editar" name="editar" />
+                                    <input class="btn btn-warning btn-sm" type="submit" value="Editar" name="editar" />
                                 </form>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>' />
                                     <input type="hidden" name="action" value="excluirNavio" />
-                                    <input type="submit" value="Excluir" name="excluir" />
+                                    <input class="btn btn-danger btn-sm" type="submit" value="Excluir" name="excluir" />
                                 </form>
                             </td>
                         </tr>

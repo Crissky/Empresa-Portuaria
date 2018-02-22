@@ -19,7 +19,7 @@ and open the template in the editor.
     <h1>Agentes</h1>
 
     <p id="addlink">
-        <a id="link" href="insertAgente.php">Adicionar Agente</a>
+        <a class="btn btn-primary" href="insertAgente.php">Adicionar Agente</a>
     </p>
 
     <table border="1">
@@ -50,13 +50,13 @@ and open the template in the editor.
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
                                 <form name="alterar" action="updateAgente.php" method="POST">
                                     <input type="hidden" name="codigo" value='<?=$agente["codigo"]?>'/>
-                                    <input type="submit" value="Editar" name="editar" />
+                                    <input class="btn btn-warning btn-sm" type="submit" value="Editar" name="editar" />
                                 </form>
                             </td>
                             <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> ><form name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="codigo" value='<?=$agente["codigo"]?>' />
                                     <input type="hidden" name="action" value="excluirAgente" />
-                                    <input type="submit" value="Excluir" name="excluir" />
+                                    <input class="btn btn-danger btn-sm" type="submit" value="Excluir" name="excluir" />
                                 </form>
                             </td>
                         </tr>

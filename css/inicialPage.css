@@ -61,7 +61,7 @@
 
 .btNavio:hover{
     opacity: 0.7;
-    transform: scale(1.1);
+    transform: scale(1.1);    
 }
 
 .btCarga:hover{
@@ -203,7 +203,7 @@ p#addlink{
 
 a {
     font-weight: bolder;
-    color: #1E90FF;
+/*    color: #1E90FF;*/
     text-decoration: none;
 }
 
@@ -220,11 +220,11 @@ a#link:hover{
     text-decoration: underline;
 }
 
-body {
+/*body {
     font-family: Arial, sans-serif;
     background-color: #DDD;
     color: rgba(0,0,0,1);
-}
+}*/
 
 div#interface {
     width: 1000px;
@@ -242,4 +242,13 @@ div.cima {
 div.baixo {
     text-align: center;
     vertical-align: text-bottom;
+    padding-top: 10px;
+}
+
+div.cima a:hover{
+    text-decoration: none;
+}
+
+div.baixo a:hover{
+    text-decoration: none;
 }
