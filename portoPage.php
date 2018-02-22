@@ -21,7 +21,7 @@ and open the template in the editor.
         <a class="btn btn-primary" href="insertPorto.php">Adicionar Porto</a>
     </p>
     <div class="container mt-5">
-            <div class="row mb-5">
+            <div class="row mb-5 justify-content-center">
                 
                 <?php
                 if($grupo){

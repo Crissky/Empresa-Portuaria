@@ -23,7 +23,7 @@ and open the template in the editor.
     </p>
 
     <div class="container mt-5">
-            <div class="row mb-5">
+            <div class="row mb-5 justify-content-center">
                 
                 <?php
                 if($grupo){
