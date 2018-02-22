@@ -16,58 +16,45 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-    <h1>Navios</h1>
+<h1 class="mb-4" >Navios</h1>
 
     <p id="addlink">
         <a class="btn btn-primary" href="insertNavio.php">Adicionar Navio</a>
     </p>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Capacidade (Ton)</th>
-                <th>Comprimento (m)</th>
-                <th>Calado</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+    <div class="container mt-5">
+            <div class="row mb-5">
+                
+                <?php
                 if($grupo){
-                    foreach ($grupo as $navio){ 
-                        $nRow += 1;?>
-                        <tr>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$navio["nome"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$navio["capacidade"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$navio["comprimento"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                    <?=$navio["calado"]?>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <form name="alterar" action="updateNavio.php" method="POST">
+                    foreach ($grupo as $navio){?>
+                <div class="col-sm-4 mt-4">
+                    <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Nome: <?=$navio["nome"]?></li>
+                                <li class="list-group-item">Capacidade: <?=$navio["capacidade"]?></li>
+                                <li class="list-group-item">Comprimento: <?=$navio["comprimento"]?></li>
+                                <li class="list-group-item">Calado: <?=$navio["calado"]?></li>
+                            </ul>
+                        <div class="card-body ml-auto">
+                            <div class="row">
+                                <form class="mr-3" name="alterar" action="updateNavio.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>'/>
-                                    <input class="btn btn-warning btn-sm" type="submit" value="Editar" name="editar" />
+                                    <input class="card-link btn btn-warning" type="submit" value="Editar" name="editar" />
                                 </form>
-                            </td>
-                            <td id=<?php echo($nRow%2==0 ? 'light' : 'dark')?> >
-                                <form name="excluir" action="connection.php" method="POST">
+                                <form class="mr-3" name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$navio["nome"]?>' />
                                     <input type="hidden" name="action" value="excluirNavio" />
-                                    <input class="btn btn-danger btn-sm" type="submit" value="Excluir" name="excluir" />
+                                    <input class="card-link btn btn-danger" type="submit" value="Excluir" name="excluir" />
                                 </form>
-                            </td>
-                        </tr>
-                    <?php }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }
                 }
                 ?>
-        </tbody>
-    </table>
+            </div>
+        </div>
+    
 <?php include (FOOTER_TEMPLATE);?>
