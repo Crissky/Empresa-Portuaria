@@ -35,81 +35,104 @@ function desabilita_perecivel(){
 <h2>Editar Carga</h2>
 
 <form name="dadosCarga" action="connection.php" method="POST" >
-    <table border="1">
-        <tbody>
-            <tr>
-                <td>Peso:</td>
-                <td><input type="text" name="peso" style="width: 100%" value='<?=$carga["peso"]?>' required/></td>
-            </tr>
-            <tr>
-                <td>Código Agente:</td>
-                <td>
-                    <select name="codigo" style="width: 100%">
-                        <?php
-                            if($grupo_agente){
-                                foreach ($grupo_agente as $agente){ ?>
-                                    <option value="<?=$agente["codigo"]?>"  <?php if ($agente["codigo"] == $carga["codigo"]) echo "selected='selected'";?> ><?=$agente["nome"]?></option>
-                            <?php }
-                            }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Tipo:</td>
-                <td id="radio">
-                    <input type="radio" name="tipo" value="perecivel" onclick="javascript:habilita_perecivel();" <?php if($carga["tipo"] == "perecivel") echo 'checked="checked"';?> required/>
-                    <label>Perecível</label><br>
-                    <input type="radio" name="tipo" value="sensivel" onclick="javascript:desabilita_perecivel();" <?php if($carga["tipo"] == "sensivel") echo 'checked="checked"';?> required/>
-                    <label>Sensível</label>
-                </td>
-            </tr>
-            <tr>
-                <td>Validade:</td>
-                <td><input type="date" name="data_validade" style="width: 100%" id="linked_perecivel" <?php if($carga["tipo"] == "sensivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "perecivel") echo 'value="'.$carga["data_validade"].'"';?> required/></td>
-            </tr>
-            <tr>
-                <td>Temperatura Máx:</td>
-                <td><input type="text" name="temperatura_maxima" style="width: 100%" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> required/></td>
-            </tr>
-            <tr>
-                <td>Navio:</td>
-                <td>
-                    <select name="nome_navio" style="width: 100%" required>
-                        <?php
-                            if($grupo_navio){
-                                foreach ($grupo_navio as $navio){ ?>
-                                    <option value="<?=$navio["nome"]?>" <?php if ($carga["nome_navio"] == $navio["nome"]) echo "selected='selected'";?> ><?=$navio["nome"]?></option>
-                            <?php }
-                            }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Porto:</td>
-                <td>
-                    <select name="nome_porto" style="width: 100%" required>
-                        <?php
-                            if($grupo_porto){
-                                foreach ($grupo_porto as $porto){ ?>
-                                    <option value="<?=$porto["nome"]?>" <?php if ($carga["nome_porto"] == $porto["nome"]) echo "selected='selected'";?> ><?=$porto["nome"]?></option>
-                            <?php }
-                            }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Desembarque:</td>
-                <td><input type="date" name="data_maxima_desembarque" style="width: 100%" value="<?=$carga['data_maxima_desembarque']?>" required/></td>
-            </tr>
-            <tr>
-                <td><input type="hidden" name="action" value="alterarCarga" /></td>
-                <input type="hidden" name="numero" value='<?=$carga["numero"]?>' />
-                <td><input type="submit" value="Enviar" name="Enviar" /></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-sm-12 col-md10 col-lg-8">
+                <form>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Peso</label>
+                            <input class="form-control" type="text" name="peso" value="<?=$carga["peso"]?>" placeholder="Peso" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Agente</label>
+                            <select class="form-control" name="codigo">
+                                <?php
+                                    if($grupo_agente){
+                                        foreach ($grupo_agente as $agente){ ?>
+                                            <option value="<?=$agente["codigo"]?>"  <?php if ($agente["codigo"] == $carga["codigo"]) echo "selected='selected'";?> ><?=$agente["nome"]?></option>
+                                    <?php }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Tipo</label>
+                            <div class="row">
+                                <div class="col-sm-12 col-md10 col-lg-8">
+                                    <input class="form-check-inline" id="tipoper" type="radio" name="tipo" value="perecivel" onclick="javascript:habilita_perecivel();" <?php if($carga["tipo"] == "perecivel") echo 'checked="checked"';?> required/>
+                                    <label for="tipoper">Perecível</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md10 col-lg-8">
+                                    <input class="form-check-inline" id="tiposen" type="radio" name="tipo" value="sensivel" onclick="javascript:desabilita_perecivel();" <?php if($carga["tipo"] == "sensivel") echo 'checked="checked"';?> required/>
+                                    <label for="tiposen">Sensível</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Validade</label>
+                            <input class="form-control" type="date" name="data_validade" id="linked_perecivel" <?php if($carga["tipo"] == "sensivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "perecivel") echo 'value="'.$carga["data_validade"].'"';?> required/></td>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Temperatura Máx</label>
+                            <input class="form-control" type="text" name="temperatura_maxima" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> required/></td>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Navio</label>
+                            <select class="form-control" name="nome_navio" required>
+                                <?php
+                                    if($grupo_navio){
+                                        foreach ($grupo_navio as $navio){ ?>
+                                            <option value="<?=$navio["nome"]?>" <?php if ($carga["nome_navio"] == $navio["nome"]) echo "selected='selected'";?> ><?=$navio["nome"]?></option>
+                                    <?php }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Porto</label>
+                            <select class="form-control" name="nome_porto" required>
+                                <?php
+                                    if($grupo_porto){
+                                        foreach ($grupo_porto as $porto){ ?>
+                                            <option value="<?=$porto["nome"]?>" <?php if ($carga["nome_porto"] == $porto["nome"]) echo "selected='selected'";?> ><?=$porto["nome"]?></option>
+                                    <?php }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Desembarque</label>
+                            <input class="form-control" type="date" name="data_maxima_desembarque" value="<?=$carga['data_maxima_desembarque']?>" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <input type="hidden" name="action" value="alterarCarga" />
+                            <input type="hidden" name="numero" value='<?=$carga["numero"]?>' />
+                            <input class="btn btn-primary" type="submit" value="Enviar" name="Enviar" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </form>
 <?php include (FOOTER_TEMPLATE);?>

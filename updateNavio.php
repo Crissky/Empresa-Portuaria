@@ -17,32 +17,44 @@
 <h2>Editar Navio</h2>
 
 <form name="dadosNavio" action="connection.php" method="POST">
-    <table border="1">
-        <tbody>
-            <tr>
-                <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value='<?=$navio["nome"]?>' required/></td>
-            </tr>
-            <tr>
-                <td>Capacidade:</td>
-                <td><input type="text" name="capacidade" style="width: 100%" value='<?=$navio["capacidade"]?>' required/></td>
-            </tr>
-            <tr>
-                <td>Comprimento:</td>
-                <td><input type="text" name="comprimento" style="width: 100%" value='<?=$navio["comprimento"]?>' required/></td>
-            </tr>
-            <tr>
-                <td>Calado:</td>
-                <td><input type="text" name="calado" style="width: 100%" value='<?=$navio["calado"]?>' required/></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="hidden" name="action" value="alterarNavio" />
-                    <input type="hidden" name="originalNome" value='<?=$navio["nome"]?>' />
-                </td>
-                <td><input type="submit" value="Enviar" name="Enviar" /></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-sm-12 col-md10 col-lg-8">
+                <form>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Nome</label>
+                            <input class="form-control" type="text" name="nome" value="<?=$navio["nome"]?>" placeholder="Nome" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Capacidade</label>
+                            <input class="form-control" type="text" name="capacidade" value="<?=$navio["capacidade"]?>" placeholder="Capacidade" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Comprimento</label>
+                            <input class="form-control" type="text" name="comprimento" value="<?=$navio["comprimento"]?>" placeholder="Comprimento" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <label for="inputNome">Calado</label>
+                            <input class="form-control" type="text" name="calado" value="<?=$navio["calado"]?>" placeholder="Calado" required/>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-sm-6">
+                            <input type="hidden" name="action" value="alterarNavio" />
+                            <input type="hidden" name="originalNome" value='<?=$navio["nome"]?>' />
+                            <input class="btn btn-primary" type="submit" value="Enviar" name="Enviar" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </form>
 <?php include (FOOTER_TEMPLATE);?>

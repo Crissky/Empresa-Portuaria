@@ -16,7 +16,7 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-    <h1 class="mb-4">Rotas</h1>
+    <h1 class="mb-4 display-4">Rotas</h1>
     <p id="addlink">
         <a class="btn btn-primary" href="insertRota.php">Adicionar Rota</a>
     </p>

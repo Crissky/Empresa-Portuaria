@@ -23,7 +23,7 @@ CREATE TABLE agente (
   nome varchar(100) NOT NULL,
   nome_porto varchar(100) NOT NULL,
   PRIMARY KEY (codigo),
-  CONSTRAINT porto_agente_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome)
+  CONSTRAINT porto_agente_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE carga (
@@ -37,17 +37,17 @@ CREATE TABLE carga (
   nome_porto varchar(100) NOT NULL,
   data_maxima_desembarque varchar(11) NOT NULL,
   PRIMARY KEY (numero),
-  CONSTRAINT agente_carga_fk FOREIGN KEY (codigo) REFERENCES agente (codigo)ON DELETE CASCADE,
-  CONSTRAINT navio_carga_fk FOREIGN KEY (nome_navio) REFERENCES navio (nome)ON UPDATE CASCADE,
-  CONSTRAINT porto_carga_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome)ON UPDATE CASCADE
+  CONSTRAINT agente_carga_fk FOREIGN KEY (codigo) REFERENCES agente (codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT navio_carga_fk FOREIGN KEY (nome_navio) REFERENCES navio (nome) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT porto_carga_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE rota (
   nome_navio varchar(100) NOT NULL,
   nome_porto varchar(100) NOT NULL,
   PRIMARY KEY (nome_navio,nome_porto),
-  CONSTRAINT navio_rota_fk FOREIGN KEY (nome_navio) REFERENCES navio (nome) ON UPDATE CASCADE,
-  CONSTRAINT porto_rota_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome) ON UPDATE CASCADE
+  CONSTRAINT navio_rota_fk FOREIGN KEY (nome_navio) REFERENCES navio (nome) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT porto_rota_fk FOREIGN KEY (nome_porto) REFERENCES porto (nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- POPULANDO TABELA NAVIO

@@ -16,7 +16,7 @@ and open the template in the editor.
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-<h1 class="mb-4">Navios</h1>
+<h1 class="mb-4 display-4">Navios</h1>
 
     <p id="addlink">
         <a class="btn btn-primary" href="insertNavio.php">Adicionar Navio</a>
@@ -24,7 +24,6 @@ and open the template in the editor.
 
     <div class="container mt-5">
             <div class="row mb-5 justify-content-center">
-                
                 <?php
                 if($grupo){
                     foreach ($grupo as $navio){?>
