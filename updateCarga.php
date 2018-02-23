@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -39,7 +39,7 @@ function desabilita_perecivel(){
         <tbody>
             <tr>
                 <td>Peso:</td>
-                <td><input type="text" name="peso" style="width: 100%" value='<?=$carga["peso"]?>' /></td>
+                <td><input type="text" name="peso" style="width: 100%" value='<?=$carga["peso"]?>' required/></td>
             </tr>
             <tr>
                 <td>Código Agente:</td>
@@ -58,24 +58,24 @@ function desabilita_perecivel(){
             <tr>
                 <td>Tipo:</td>
                 <td id="radio">
-                    <input type="radio" name="tipo" value="perecivel" onclick="javascript:habilita_perecivel();" <?php if($carga["tipo"] == "perecivel") echo 'checked="checked"';?> />
+                    <input type="radio" name="tipo" value="perecivel" onclick="javascript:habilita_perecivel();" <?php if($carga["tipo"] == "perecivel") echo 'checked="checked"';?> required/>
                     <label>Perecível</label><br>
-                    <input type="radio" name="tipo" value="sensivel" onclick="javascript:desabilita_perecivel();" <?php if($carga["tipo"] == "sensivel") echo 'checked="checked"';?> />
+                    <input type="radio" name="tipo" value="sensivel" onclick="javascript:desabilita_perecivel();" <?php if($carga["tipo"] == "sensivel") echo 'checked="checked"';?> required/>
                     <label>Sensível</label>
                 </td>
             </tr>
             <tr>
                 <td>Validade:</td>
-                <td><input type="date" name="data_validade" style="width: 100%" id="linked_perecivel" <?php if($carga["tipo"] == "sensivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "perecivel") echo 'value="'.$carga["data_validade"].'"';?> /></td>
+                <td><input type="date" name="data_validade" style="width: 100%" id="linked_perecivel" <?php if($carga["tipo"] == "sensivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "perecivel") echo 'value="'.$carga["data_validade"].'"';?> required/></td>
             </tr>
             <tr>
                 <td>Temperatura Máx:</td>
-                <td><input type="text" name="temperatura_maxima" style="width: 100%" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> /></td>
+                <td><input type="text" name="temperatura_maxima" style="width: 100%" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> required/></td>
             </tr>
             <tr>
                 <td>Navio:</td>
                 <td>
-                    <select name="nome_navio" style="width: 100%">
+                    <select name="nome_navio" style="width: 100%" required>
                         <?php
                             if($grupo_navio){
                                 foreach ($grupo_navio as $navio){ ?>
@@ -89,7 +89,7 @@ function desabilita_perecivel(){
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto" style="width: 100%">
+                    <select name="nome_porto" style="width: 100%" required>
                         <?php
                             if($grupo_porto){
                                 foreach ($grupo_porto as $porto){ ?>
@@ -102,7 +102,7 @@ function desabilita_perecivel(){
             </tr>
             <tr>
                 <td>Desembarque:</td>
-                <td><input type="date" name="data_maxima_desembarque" style="width: 100%" value="<?=$carga['data_maxima_desembarque']?>" /></td>
+                <td><input type="date" name="data_maxima_desembarque" style="width: 100%" value="<?=$carga['data_maxima_desembarque']?>" required/></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="alterarCarga" /></td>
@@ -112,4 +112,4 @@ function desabilita_perecivel(){
         </tbody>
     </table>
 </form>
-<?php include (FOOTER_TEMPLATE);?>        
+<?php include (FOOTER_TEMPLATE);?>

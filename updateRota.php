@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -26,7 +26,7 @@
             <tr>
                 <td>Navio:</td>
                 <td>
-                    <select name="nome_navio" style="width: 100%">
+                    <select name="nome_navio" style="width: 100%" required>
                         <?php
                             if($grupo_navio){
                                 foreach ($grupo_navio as $navio){ ?>
@@ -40,7 +40,7 @@
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto" style="width: 100%">
+                    <select name="nome_porto" style="width: 100%" required>
                         <?php
                             if($grupo_porto){
                                 foreach ($grupo_porto as $porto){ ?>

@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,7 +9,7 @@
     include 'connection.php';
     /* var_dump($_POST["nome"]); */
     try {
-        $grupo = selectAllPortos(); 
+        $grupo = selectAllPortos();
         $agente = selectAgenteByNome($_POST["codigo"]);
         /*var_dump($agente);*/
    } catch (Exception $ex) {
@@ -26,12 +26,12 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value='<?=$agente["nome"]?>' /></td>
+                <td><input type="text" name="nome" style="width: 100%" value='<?=$agente["nome"]?>' required/></td>
             </tr>
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto" style="width: 100%">
+                    <select name="nome_porto" style="width: 100%" required>
                         <?php
                             if($grupo){
                                 foreach ($grupo as $porto){ ?>

@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,16 +21,16 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value='<?=$porto["nome"]?>' /></td>
+                <td><input type="text" name="nome" style="width: 100%" value='<?=$porto["nome"]?>' required/></td>
             </tr>
             <tr>
                 <td>Endereço:</td>
-                <td><input type="text" name="endereco" style="width: 100%" value='<?=$porto["endereco"]?>' /></td>
+                <td><input type="text" name="endereco" style="width: 100%" value='<?=$porto["endereco"]?>' required/></td>
             </tr>
             <tr>
                 <td>Tipo:</td>
                 <td>
-                    <select name="tipo" style="width: 100%">
+                    <select name="tipo" style="width: 100%" required>
                         <option value="fluvial" <?php if ($porto["tipo"] == "fluvial") echo "selected='selected'";?> >Fluvial</option>
                         <option value="maritimo" <?php if ($porto["tipo"] == "maritimo") echo "selected='selected'";?> >Marítimo</option>
                     </select>
@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>Capacidade Estocagem:</td>
-                <td><input type="text" name="capacidade_estocagem" style="width: 100%" value='<?=$porto["capacidade_estocagem"]?>' /></td>
+                <td><input type="text" name="capacidade_estocagem" style="width: 100%" value='<?=$porto["capacidade_estocagem"]?>' required/></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="alterarPorto" />

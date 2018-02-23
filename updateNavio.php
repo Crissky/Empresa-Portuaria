@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,19 +21,19 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value='<?=$navio["nome"]?>' /></td>
+                <td><input type="text" name="nome" style="width: 100%" value='<?=$navio["nome"]?>' required/></td>
             </tr>
             <tr>
                 <td>Capacidade:</td>
-                <td><input type="text" name="capacidade" style="width: 100%" value='<?=$navio["capacidade"]?>' /></td>
+                <td><input type="text" name="capacidade" style="width: 100%" value='<?=$navio["capacidade"]?>' required/></td>
             </tr>
             <tr>
                 <td>Comprimento:</td>
-                <td><input type="text" name="comprimento" style="width: 100%" value='<?=$navio["comprimento"]?>' /></td>
+                <td><input type="text" name="comprimento" style="width: 100%" value='<?=$navio["comprimento"]?>' required/></td>
             </tr>
             <tr>
                 <td>Calado:</td>
-                <td><input type="text" name="calado" style="width: 100%" value='<?=$navio["calado"]?>' /></td>
+                <td><input type="text" name="calado" style="width: 100%" value='<?=$navio["calado"]?>' required/></td>
             </tr>
             <tr>
                 <td>
