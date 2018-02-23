@@ -1,13 +1,13 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */?>
 <?php include 'connection.php';
     try {
-       $grupo = selectAllPortos(); 
+       $grupo = selectAllPortos();
    } catch (Exception $ex) {
        echo $ex->getMessage();
    }
@@ -23,7 +23,7 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value="" /></td>
+                <td><input type="text" name="nome" style="width: 100%" value="" required/></td>
             </tr>
             <tr>
                 <td>Porto:</td>
@@ -47,4 +47,3 @@
     </table>
 </form>
 <?php include (FOOTER_TEMPLATE);?>
-

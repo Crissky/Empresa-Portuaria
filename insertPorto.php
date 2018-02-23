@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,11 +16,11 @@
         <tbody>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="nome" style="width: 100%" value="" /></td>
+                <td><input type="text" name="nome" style="width: 100%" value="" required/></td>
             </tr>
             <tr>
                 <td>Endereço:</td>
-                <td><input type="text" name="endereco" style="width: 100%" value="" /></td>
+                <td><input type="text" name="endereco" style="width: 100%" value="" required/></td>
             </tr>
             <tr>
                 <td>Tipo:</td>
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>Capacidade Estocagem:</td>
-                <td><input type="text" name="capacidade_estocagem" style="width: 100%" value="" /></td>
+                <td><input type="text" name="capacidade_estocagem" style="width: 100%" value="" required/></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="inserirPorto" /></td>
@@ -42,4 +42,4 @@
         </tbody>
     </table>
 </form>
-<?php include (FOOTER_TEMPLATE);?>        
+<?php include (FOOTER_TEMPLATE);?>

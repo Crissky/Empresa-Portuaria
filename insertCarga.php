@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -38,12 +38,12 @@ function desabilita_perecivel(){
         <tbody>
             <tr>
                 <td>Peso:</td>
-                <td><input type="text" name="peso" style="width: 100%" value="" /></td>
+                <td><input type="text" name="peso" style="width: 100%" value="" required /></td>
             </tr>
             <tr>
                 <td>Código Agente:</td>
                 <td>
-                    <select name="codigo" style="width: 100%">
+                    <select name="codigo" style="width: 100%" required>
                         <?php
                             if($grupo_agente){
                                 foreach ($grupo_agente as $agente){ ?>
@@ -69,16 +69,16 @@ function desabilita_perecivel(){
             </tr>
             <tr>
                 <td>Validade:</td>
-                <td><input type="date" name="data_validade" style="width: 100%" id="linked_perecivel" value="<?php echo date('Y-m-d'); ?>" /></td>
+                <td><input type="date" name="data_validade" style="width: 100%" id="linked_perecivel" value="<?php echo date('Y-m-d'); ?>" required /></td>
             </tr>
             <tr>
                 <td>Temperatura Máx:</td>
-                <td><input type="text" name="temperatura_maxima" style="width: 100%" id="linked_sensivel" value="" disabled="disabled"/></td>
+                <td><input type="text" name="temperatura_maxima" style="width: 100%" id="linked_sensivel" value="" disabled="disabled" required/></td>
             </tr>
             <tr>
                 <td>Navio:</td>
                 <td>
-                    <select name="nome_navio" style="width: 100%">
+                    <select name="nome_navio" style="width: 100%" required>
                         <?php
                             if($grupo_navio){
                                 foreach ($grupo_navio as $navio){ ?>
@@ -92,7 +92,7 @@ function desabilita_perecivel(){
             <tr>
                 <td>Porto:</td>
                 <td>
-                    <select name="nome_porto" style="width: 100%">
+                    <select name="nome_porto" style="width: 100%" required>
                         <?php
                             if($grupo_porto){
                                 foreach ($grupo_porto as $porto){ ?>
@@ -105,7 +105,7 @@ function desabilita_perecivel(){
             </tr>
             <tr>
                 <td>Desembarque:</td>
-                <td><input type="date" name="data_maxima_desembarque" style="width: 100%" value="<?php echo date('Y-m-d'); ?>" /></td>
+                <td><input type="date" name="data_maxima_desembarque" style="width: 100%" value="<?php echo date('Y-m-d'); ?>"  /></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="action" value="inserirCarga" /></td>
@@ -114,4 +114,4 @@ function desabilita_perecivel(){
         </tbody>
     </table>
 </form>
-<?php include (FOOTER_TEMPLATE);?>        
+<?php include (FOOTER_TEMPLATE);?>
