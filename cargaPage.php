@@ -31,12 +31,12 @@ and open the template in the editor.
     </p>
 
     <div class="container mt-5">
-            <div class="row mb-5">
+            <div class="row mb-5 justify-content-center">
                 
                 <?php
                 if($grupo){
                     foreach ($grupo as $carga){ ?>
-                <div class="col-sm-4 mt-4">
+                <div class="col-sm-11 col-md-6 col-lg-4 mt-4">
                     <div class="card">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">

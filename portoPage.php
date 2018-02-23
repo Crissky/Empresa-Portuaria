@@ -21,12 +21,12 @@ and open the template in the editor.
         <a class="btn btn-primary" href="insertPorto.php">Adicionar Porto</a>
     </p>
     <div class="container mt-5">
-            <div class="row mb-5">
+            <div class="row mb-5 justify-content-center">
                 
                 <?php
                 if($grupo){
                     foreach ($grupo as $porto){?>
-                <div class="col-sm-4 mt-4">
+                <div class="col-sm-11 col-md-6 col-lg-4 mt-4">
                     <div class="card">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
@@ -48,11 +48,11 @@ and open the template in the editor.
                             </ul>
                         <div class="card-body ml-auto">
                             <div class="row">
-                                <form class="mr-3" name="alterar" action="updatePorto.php" method="POST">
+                                <form class="mr-3 mt-1" name="alterar" action="updatePorto.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$porto["nome"]?>'/>
                                     <input class="btn btn-warning" type="submit" value="Editar" name="editar" />
                                 </form>
-                                <form class="mr-3" name="excluir" action="connection.php" method="POST">
+                                <form class="mr-3 mt-1" name="excluir" action="connection.php" method="POST">
                                     <input type="hidden" name="nome" value='<?=$porto["nome"]?>' />
                                     <input type="hidden" name="action" value="excluirPorto" />
                                     <input class="btn btn-danger" type="submit" value="Excluir" name="excluir" />
