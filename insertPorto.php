@@ -39,8 +39,8 @@
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
-                            <label for="inputNome">Capacidade Estocagem</label>
-                            <input class="form-control" type="text" name="capacidade_estocagem" value="" placeholder="Capacidade Estocagem" required/>
+                            <label for="inputNome">Capacidade de Estocagem</label>
+                            <input class="form-control" type="text" name="capacidade_estocagem" value="" placeholder="Capacidade em toneladas" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">

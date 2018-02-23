@@ -25,13 +25,13 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
                             <label for="inputNome">Capacidade</label>
-                            <input class="form-control" type="text" name="capacidade" value="" placeholder="Capacidade" required/>
+                            <input class="form-control" type="text" name="capacidade" value="" placeholder="Capacidade em toneladas" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
                             <label for="inputNome">Comprimento</label>
-                            <input class="form-control" type="text" name="comprimento" value="" placeholder="Comprimento" required/>
+                            <input class="form-control" type="text" name="comprimento" value="" placeholder="Comprimento em metros" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">

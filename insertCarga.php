@@ -41,7 +41,7 @@ function desabilita_perecivel(){
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
                             <label for="inputNome">Peso</label>
-                            <input class="form-control" type="text" name="peso" value="" placeholder="Peso" required/>
+                            <input class="form-control" type="text" name="peso" value="" placeholder="Peso em toneladas" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
@@ -84,8 +84,8 @@ function desabilita_perecivel(){
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
-                            <label for="inputNome">Temperatura Máx</label>
-                            <input class="form-control" type="text" name="temperatura_maxima" id="linked_sensivel" value="" placeholder="Temperatura" disabled="disabled" required/>
+                            <label for="inputNome">Temperatura Máxima</label>
+                            <input class="form-control" type="text" name="temperatura_maxima" id="linked_sensivel" value="" placeholder="Temperatura em ºC" disabled="disabled" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">

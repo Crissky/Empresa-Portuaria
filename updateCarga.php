@@ -42,7 +42,7 @@ function desabilita_perecivel(){
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
                             <label for="inputNome">Peso</label>
-                            <input class="form-control" type="text" name="peso" value="<?=$carga["peso"]?>" placeholder="Peso" required/>
+                            <input class="form-control" type="text" name="peso" value="<?=$carga["peso"]?>" placeholder="Peso em toneladas" required/>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
@@ -85,8 +85,8 @@ function desabilita_perecivel(){
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-6">
-                            <label for="inputNome">Temperatura Máx</label>
-                            <input class="form-control" type="text" name="temperatura_maxima" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> required/></td>
+                            <label for="inputNome">Temperatura Máxima</label>
+                            <input class="form-control" type="text" name="temperatura_maxima" id="linked_sensivel" <?php if($carga["tipo"] == "perecivel") echo 'disabled="disabled"';?> <?php if($carga["tipo"] == "sensivel") echo 'value="'.$carga["temperatura_maxima"].'"';?> placeholder="Temperatura em ºC" required/></td>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
