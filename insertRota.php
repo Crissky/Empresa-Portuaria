@@ -18,7 +18,7 @@
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-<h2>Adicionar Rota</h2>
+<h2 class="mt-5 pt-5">Adicionar Rota</h2>
 
 <form name="dadosRota" action="connection.php" method="POST">    
     <div class="container">

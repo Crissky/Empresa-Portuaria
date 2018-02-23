@@ -9,7 +9,7 @@
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-<h2>Adicionar Navio</h2>
+<h2 class="mt-5 pt-5">Adicionar Navio</h2>
 
 <form name="dadosNavio" action="connection.php" method="POST">
     <div class="container">

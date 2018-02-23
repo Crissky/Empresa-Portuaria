@@ -56,8 +56,8 @@ if(isset($_POST["action"])){
 
 function open_database(){
     try{
-        header('Content-Type: text/html; charset=utf-8');
-        $connection = new mysqli("localhost", "root", "root", "empresa_portuaria");
+        //header('Content-Type: text/html; charset=utf-8');
+        $connection = new mysqli("localhost", "root", "", "empresa_portuaria");
         $connection->query("SET NAMES 'utf8'");
         /*$connection->query('SET character_set_connection=utf8');
         $connection->query('SET character_set_client=utf8');

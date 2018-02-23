@@ -32,7 +32,7 @@ function desabilita_perecivel(){
     }
 </script>
 
-<h2>Editar Carga</h2>
+<h2 class="mt-5 pt-5">Editar Carga</h2>
 
 <form name="dadosCarga" action="connection.php" method="POST" >
     <div class="container">

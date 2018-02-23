@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/*Importando fonte da web (Repositório do google.com/fonts)*/
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+
+
+/*Importando fonte de arquivo*/
+@font-face {
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
 .btNavio{
   background-image: url("ship-front-view.png");
   background-repeat: no-repeat;
@@ -85,11 +96,10 @@
 }
 
 h1{
-  font-family: sans-serif;
+  /*font-family: 'Oswald', sans-serif; Fonte importada do google*/
+  font-family: 'Kanit', sans-serif;
   text-align: center;
   color: #0D47A1;
-  top:50px;
-  position: relative;
 }
 
 h1#mainscreen {
@@ -97,11 +107,9 @@ h1#mainscreen {
 }
 
 h2{
-  font-family: sans-serif;
+  font-family: 'Kanit', sans-serif;
   text-align: center;
   color: #016CF0;
-  top:30px;
-  position: relative;
 }
 
 /*Formatação do Menu*/
@@ -251,4 +259,8 @@ div.cima a:hover{
 
 div.baixo a:hover{
     text-decoration: none;
+}
+
+.add-button {
+    float: right;
 }

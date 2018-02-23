@@ -17,10 +17,13 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            
             <div class="container">
                 <!--"navbar-brand" É A LOGO A ESQUENA NA NAVBAR-->
-                <a class="navbar-brand" href="index.php">Home</a>
+                <a class="navbar-brand" href="index.php">
+                    <img src="css/rudder.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo"> EP
+                </a>
 
                 <!--BOTÃO ONDE TODOS OS ITENS DICAM OCULTOS. SÓ É MOSTRADO NA DEFINIÇÃO DO "navbar-expand-lg" REALIXADA ANTERIORMENTE-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
@@ -31,19 +34,19 @@
                 <div class="collapse navbar-collapse" id="navbarSite">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="navioPage.php">Navios</a>
+                            <a class="nav-link <?php if(basename($_SERVER['SCRIPT_FILENAME'])=='navioPage.php'){echo'active';}?>" href="<?php if(basename($_SERVER['SCRIPT_FILENAME'])=='navioPage.php'){echo'#';}else{echo'navioPage.php';}?>">Navios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="agentePage.php">Agentes</a>
+                            <a class="nav-link <?php if(basename($_SERVER['SCRIPT_FILENAME'])=='agentePage.php'){echo'active';}?>" href="<?php if(basename($_SERVER['SCRIPT_FILENAME'])=='agentePage.php'){echo'#';}else{echo'agentePage.php';}?>">Agentes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="portoPage.php">Portos</a>
+                            <a class="nav-link <?php if(basename($_SERVER['SCRIPT_FILENAME'])=='portoPage.php'){echo'active';}?>" href="<?php if(basename($_SERVER['SCRIPT_FILENAME'])=='portoPage.php'){echo'#';}else{echo'portoPage.php';}?>">Portos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="rotaPage.php">Rotas</a>
+                            <a class="nav-link <?php if(basename($_SERVER['SCRIPT_FILENAME'])=='rotaPage.php'){echo'active';}?>" href="<?php if(basename($_SERVER['SCRIPT_FILENAME'])=='rotaPage.php'){echo'#';}else{echo'rotaPage.php';}?>">Rotas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cargaPage.php">Cargas</a>
+                            <a class="nav-link <?php if(basename($_SERVER['SCRIPT_FILENAME'])=='cargaPage.php'){echo'active';}?>" href="<?php if(basename($_SERVER['SCRIPT_FILENAME'])=='cargaPage.php'){echo'#';}else{echo'cargaPage.php';}?>">Cargas</a>
                         </li>
                     </ul>
                 </div>

@@ -14,7 +14,7 @@
 <?php require_once 'config.php'; ?>
 <?php include (HEADER_TEMPLATE); ?>
 
-<h2>Editar Porto</h2>
+<h2 class="mt-5 pt-5">Editar Porto</h2>
 
 <form name="dadosPorto" action="connection.php" method="POST">
     <div class="container">
